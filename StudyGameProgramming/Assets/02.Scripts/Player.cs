@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class Player : MonoBehaviour
     private float bulletDamage;
     public  GameObject bulletPrefab;
     public  Transform spPoint;
+
+    // 점수
+    public  Text scoreUIText;
+    private int score;
     #endregion
 
     void Start()
@@ -108,5 +113,16 @@ public class Player : MonoBehaviour
             }
         }
         #endregion
+
+        #region 점수 UI
+        scoreUIText.text = "Score : " + score;
+        #endregion
     }
+
+    #region 점수 변경 함수
+    public void getScore(int s)
+    {
+        score += s;
+    }
+    #endregion
 }

@@ -14,7 +14,7 @@ public class HitProcessing : MonoBehaviour
             Bullet bulletStats = other.GetComponent<Bullet>();
 
             if (topParent.tag != bulletStats.firedObject)
-                topParent.GetComponent<Stats>().getHealth(-1.0f * bulletStats.damage * DamageRatio);
+                topParent.GetComponent<Health>().getHealth(-1.0f * bulletStats.damage * DamageRatio);
 
             Destroy(other.gameObject);
         }
