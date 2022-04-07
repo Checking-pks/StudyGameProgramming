@@ -4,23 +4,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float hp;
+    public float health;
+    public float damage;
+    public string firedObject;
     
     void Start()
     {
-        hp = 10;
-        Destroy(gameObject, hp);
-    }
-
-    void Update()
-    {
-        
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Wall")
-            Destroy(other.gameObject);
-        Destroy(gameObject);
+        Destroy(gameObject, health);
     }
 }
